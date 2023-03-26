@@ -49,8 +49,10 @@
         function loadAudio(){
             var audio = new Audio();
             audio.src='sound/sound.mp3';
+            audio.muted = true;
             // when the sound has been loaded, execute your code
             audio.oncanplaythrough = (event) => {
+            audio.muted = false;
             var playedPromise = audio.play();
             if (playedPromise) {
             playedPromise.catch((e) => {
