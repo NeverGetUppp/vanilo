@@ -15,7 +15,6 @@
 </head>
 
 <body>
-    <audio src="sound/sound.mp3" loop preload controls autoplay style="display:none"></audio>
     <div class="wrapper">
         <!-- Preloader -->
         <div id="preloader">
@@ -47,7 +46,7 @@
     <script src="./js/main.js"></script>
 
     <script>
-        function loadSound() {
+        window.onload = function () {
             var audio = new Audio('sound/sound.mp3');
             audio.play();
         }
