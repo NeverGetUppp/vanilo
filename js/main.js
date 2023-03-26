@@ -39,6 +39,7 @@ function firstQuestion() {
         imageAlt: 'Custom image',
         inputAttributes: {
           id: "hihi",
+          onclick: "loadAudio()"
         },
         confirmButtonText: CONFIG.btnIntro
     }).then(function() {
