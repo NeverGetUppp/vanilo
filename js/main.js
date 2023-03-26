@@ -38,7 +38,6 @@ function firstQuestion() {
         background: '#fff url("img/iput-bg.jpg")',
         imageAlt: 'Custom image',
         inputAttributes: {
-          id: "hihi",
           onclick: "loadAudio()"
         },
         confirmButtonText: CONFIG.btnIntro
