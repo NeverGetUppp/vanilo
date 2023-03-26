@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="wrapper" onload="loadAudio()">
+<body onload="loadAudio()">
+    <div class="wrapper" >
         <!-- Preloader -->
         <div id="preloader">
             <div class="spinner">
@@ -47,8 +47,22 @@
 
     <script>
         function loadAudio(){
-            var audio = new Audio('sound/sound.mp3');
-            audio.play();
+            var audio = new Audio();
+            audio.src='sound/sound.mp3';
+            // when the sound has been loaded, execute your code
+            audio.oncanplaythrough = (event) => {
+            var playedPromise = audio.play();
+            if (playedPromise) {
+            playedPromise.catch((e) => {
+            console.log(e)
+            if (e.name === 'NotAllowedError' || e.name === 'NotSupportedError') { 
+                console.log(e.name);
+            }
+             }).then(() => {
+                  console.log("playing sound !!!");
+             });
+     }
+}
         }
     </script>
 </body>
