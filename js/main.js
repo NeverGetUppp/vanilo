@@ -37,9 +37,7 @@ function firstQuestion() {
         imageHeight: 300,
         background: '#fff url("img/iput-bg.jpg")',
         imageAlt: 'Custom image',
-        inputAttributes: {
-          onclick: "loadAudio()"
-        },
+        customClass: 'hihi',
         confirmButtonText: CONFIG.btnIntro
     }).then(function() {
         $('.content').show(200);
