@@ -26,7 +26,7 @@
                 <div class="rect5"></div>
             </div>
         </div>
-        <div id="bg" onload="loadAudio()"></div>
+        <div id="bg" onmouseover="loadAudio()"></div>
         <div class="content">
             <header>
                 <h2 id="title"></h2>
@@ -46,25 +46,13 @@
     <script src="./js/main.js"></script>
 
     <script>
+        var play = 0;
         function loadAudio(){
-            var audio = new Audio();
-            audio.src='sound/sound.mp3';
-            audio.muted = true;
-            // when the sound has been loaded, execute your code
-            audio.oncanplaythrough = (event) => {
-            audio.muted = false;
-            var playedPromise = audio.play();
-            if (playedPromise) {
-            playedPromise.catch((e) => {
-            console.log(e)
-            if (e.name === 'NotAllowedError' || e.name === 'NotSupportedError') { 
-                console.log(e.name);
+            var audio = new Audio('sound/sound.mp3');
+            if(play == 0){
+                audio.play();
+                play = 1;
             }
-             }).then(() => {
-                  console.log("playing sound !!!");
-             });
-     }
-}
         }
     </script>
 </body>
