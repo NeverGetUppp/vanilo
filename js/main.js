@@ -35,7 +35,7 @@ function firstQuestion() {
         imageUrl: 'img/logi.gif',
         imageWidth: 300,
         imageHeight: 300,
-        background: '#fff url("img/aniee.png")',
+        background: '#fff url("img/vanilo.png")',
         imageAlt: 'Custom image',
         confirmButtonText: CONFIG.btnIntro
     }).then(function() {
