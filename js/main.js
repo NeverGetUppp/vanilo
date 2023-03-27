@@ -33,9 +33,10 @@ function firstQuestion() {
         title: CONFIG.introTitle,
         text: CONFIG.introDesc,
         imageUrl: 'img/logi.gif',
-        imageWidth: 900,
-        imageHeight: 900,
+        imageWidth: 300,
+        imageHeight: 300,
         background: '#fff url("img/anielo.png")',
+        
         imageAlt: 'Custom image',
         confirmButtonText: CONFIG.btnIntro
     }).then(function() {
